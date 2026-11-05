@@ -88,3 +88,6 @@ Each file is limited to 5 MB. PDFs must contain selectable text; scanned/image-o
 - FAISS uses exact inner-product search over normalized vectors (equivalent to cosine similarity).
 - Rebuilding the index from the full corpus happens automatically if the saved index does not match the TXT corpus. You can also rebuild manually with the script above.
 - The current matching thresholds are heuristic and must be validated on labelled plagiarism/non-plagiarism examples before making accuracy claims.
+=======
+# The-Plagiarism-Detector
+
