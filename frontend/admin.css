@@ -1,0 +1,9 @@
+.admin-shell { max-width: 1220px; }
+.login-panel { max-width: 560px; margin: 0 auto; }
+.admin-hint { margin-top: 18px; }
+.admin-grid { grid-template-columns: minmax(300px, 0.8fr) minmax(0, 1.4fr); }
+.admin-table-wrap { margin-top: 18px; max-height: 560px; }
+.admin-table-wrap td, .admin-table-wrap th { overflow-wrap: anywhere; }
+#reference-files { padding: 12px; border: 1px solid var(--border); border-radius: 12px; background: var(--surface-2); }
+button:disabled { opacity: 0.65; cursor: wait; }
+@media (max-width: 980px) { .admin-grid { grid-template-columns: 1fr; } }

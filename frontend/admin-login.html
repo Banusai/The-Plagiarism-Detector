@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Administrator Login | Reference Management</title>
+  <link rel="stylesheet" href="./style.css" />
+  <link rel="stylesheet" href="./admin.css" />
+  <script defer src="./admin-login.js"></script>
+</head>
+<body>
+  <header class="topbar">
+    <div class="brand">
+      <div class="brand-mark" aria-hidden="true">▤</div>
+      <div><p class="eyebrow">Restricted area</p><h1>Reference Admin</h1></div>
+    </div>
+    <a class="btn btn-secondary" href="./index.html">Back to checker</a>
+  </header>
+  <main class="page-shell admin-shell">
+    <section class="hero-card">
+      <div>
+        <p class="section-label">Administrator access</p>
+        <h2>Sign in to manage reference documents</h2>
+        <p class="hero-copy">Only an authorized administrator can add documents to the reference corpus.</p>
+      </div>
+    </section>
+    <section class="panel login-panel">
+      <div class="panel-head"><div><p class="section-label">Secure login</p><h3>Administrator sign in</h3></div></div>
+      <div id="login-error" class="notice error hidden" role="alert"></div>
+      <form id="login-form" class="stack">
+        <div class="field">
+          <label for="username">Username</label>
+          <input id="username" name="username" autocomplete="username" required />
+        </div>
+        <div class="field">
+          <label for="password">Password</label>
+          <input id="password" name="password" type="password" autocomplete="current-password" required />
+        </div>
+        <button class="btn btn-primary" type="submit">Sign in</button>
+      </form>
+      <p class="field-hint admin-hint">Configure the administrator credentials in <code>backend/.env</code> before signing in.</p>
+    </section>
+  </main>
+</body>
+</html>

@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Reference Management</title>
+  <link rel="stylesheet" href="./style.css" />
+  <link rel="stylesheet" href="./admin.css" />
+  <script defer src="./admin.js"></script>
+</head>
+<body>
+  <header class="topbar">
+    <div class="brand">
+      <div class="brand-mark" aria-hidden="true">▤</div>
+      <div><p class="eyebrow">Administrator workspace</p><h1>Reference Management</h1></div>
+    </div>
+    <div class="topbar-actions">
+      <a class="btn btn-secondary" href="./index.html">Plagiarism checker</a>
+      <button id="logout-btn" class="btn btn-ghost" type="button">Log out</button>
+    </div>
+  </header>
+
+  <main class="page-shell admin-shell">
+    <section class="hero-card">
+      <div>
+        <p class="section-label">Reference corpus</p>
+        <h2>Add and manage source documents</h2>
+        <p class="hero-copy">Upload 1–5 PDF or TXT files per batch. Each successful upload is extracted, chunked, embedded and added to the FAISS search index.</p>
+      </div>
+      <div class="hero-state"><span class="label">Session</span><span class="pill success">Administrator</span></div>
+    </section>
+
+    <section class="grid-layout admin-grid">
+      <article class="panel">
+        <div class="panel-head"><div><p class="section-label">New references</p><h3>Upload documents</h3></div></div>
+        <div id="upload-message" class="notice hidden" role="status"></div>
+        <form id="upload-form" class="stack">
+          <div class="field">
+            <label for="reference-files">Select reference documents</label>
+            <input id="reference-files" type="file" accept=".pdf,.txt,application/pdf,text/plain" multiple required />
+            <p class="field-hint">Select between 1 and 5 files. Maximum 5 MB per file. Scanned PDFs without a text layer are not supported.</p>
+            <p id="selected-files" class="field-hint">No files selected.</p>
+          </div>
+          <button id="upload-btn" class="btn btn-primary" type="submit">Upload and index</button>
+        </form>
+      </article>
+
+      <article class="panel">
+        <div class="panel-head"><div><p class="section-label">Corpus status</p><h3>Reference documents</h3></div><button id="refresh-btn" class="btn btn-secondary" type="button">Refresh</button></div>
+        <div class="stats-grid">
+          <div class="stat-card"><span class="stat-label">Managed documents</span><strong id="document-count">—</strong></div>
+          <div class="stat-card"><span class="stat-label">Indexed chunks added</span><strong id="chunk-count">—</strong></div>
+        </div>
+        <div id="list-error" class="notice error hidden" role="alert"></div>
+        <div class="table-wrap admin-table-wrap">
+          <table>
+            <thead><tr><th>Document</th><th>Format</th><th>Status</th><th>Added</th></tr></thead>
+            <tbody id="documents-body"><tr><td colspan="4">Loading reference documents…</td></tr></tbody>
+          </table>
+        </div>
+      </article>
+    </section>
+  </main>
+</body>
+</html>
